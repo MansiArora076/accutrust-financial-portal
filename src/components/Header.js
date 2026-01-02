@@ -53,17 +53,13 @@ export default function Header() {
                         <a className="navbar-brand p-0">
                             <h2 className="text-primary mb-0"><i className="fab fa-slack me-2"></i> AccuTrust Financial</h2>
                         </a>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="fa fa-bars"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarCollapse">
                             <div className="navbar-nav mx-0 mx-lg-auto">
-                                <a className={`nav-item nav-link ${activeTab === 'home' ? 'active' : ''}`} onClick={() => handleTabClick('home')}>
-                                    <Link to="/">Home</Link>
-                                </a>
-                                <a className="nav-item nav-link">
-                                    <Link to="/about">About</Link>
-                                </a>
+                                <Link className={`nav-item nav-link ${activeTab === 'home' ? 'active' : ''}`} to="/" onClick={() => handleTabClick('home')}>Home</Link>
+                                <Link className={`nav-item nav-link ${activeTab === 'about' ? 'active' : ''}`} to="/about" onClick={() => handleTabClick('about')}>About</Link>
                                 {/* <a href="service.html" className="nav-item nav-link">Services</a>
                                 <a href="blog.html" className="nav-item nav-link">Blog</a> */}
                                 <div className="nav-item dropdown">
@@ -77,7 +73,7 @@ export default function Header() {
                                         <a href="/home" className="dropdown-item">FAQs</a>
                                     </div>
                                 </div>
-                                <a className="nav-item nav-link"> <Link to="/contact">Contact</Link></a>
+                                <Link className={`nav-item nav-link ${activeTab === 'contact' ? 'active' : ''}`} to="/contact" onClick={() => handleTabClick('contact')}>Contact</Link>
                                 <div className="nav-btn px-3">
                                     <button className="btn-search btn btn-primary btn-md-square rounded-circle flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i className="fas fa-search"></i></button>
                                     <a href="#" className="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Get a Quote</a>
@@ -100,7 +96,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <div className="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="searchModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-fullscreen">
                     <div className="modal-content rounded-0">
                         <div className="modal-header">
@@ -110,7 +106,7 @@ export default function Header() {
                         <div className="modal-body d-flex align-items-center bg-primary">
                             <div className="input-group w-75 mx-auto d-flex">
                                 <input type="search" className="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1" />
-                                <span id="search-icon-1" className="btn bg-light border nput-group-text p-3"><i className="fa fa-search"></i></span>
+                                <span id="search-icon-1" className="btn bg-light border input-group-text p-3"><i className="fa fa-search"></i></span>
                             </div>
                         </div>
                     </div>

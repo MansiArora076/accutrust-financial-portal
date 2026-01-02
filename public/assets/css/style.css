@@ -886,4 +886,37 @@
 }
 /*** copyright end ***/
 
+/* --- Mobile Responsive Additions --- */
+img, .img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improve touch targets and spacing for small screens */
+.navbar-toggler {
+    padding: 0.5rem 0.75rem;
+}
+
+@media (max-width: 991px) {
+    .header-carousel .header-carousel-item { height: 600px; }
+    .navbar .navbar-nav { background: transparent !important; padding: 10px 0; border-radius: 0; }
+    .nav-btn { width: 100%; display: flex; gap: .5rem; padding: 10px; }
+    .nav-btn .btn, .nav-btn a { width: auto; }
+    .d-none.d-xl-flex { display: none !important; }
+}
+
+@media (max-width: 767px) {
+    .header-carousel .header-carousel-item { height: 480px; }
+    .header-carousel .header-carousel-item .carousel-caption { padding: 20px; }
+    .feature .feature-item, .service .service-item { margin-bottom: 1rem; }
+    .topbar { padding: 8px 0; }
+    .navbar .navbar-nav .nav-item { padding: 10px 15px; }
+    .btn { font-size: 14px; padding: .5rem 1rem; }
+}
+
+/* Ensure modals and full-screen elements behave on small screens */
+.modal-fullscreen { padding: 0; }
+
+/* End mobile responsive additions */
+
 
